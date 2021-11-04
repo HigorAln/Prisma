@@ -2,7 +2,7 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -10,9 +10,9 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Users{
-  id String @id @default(cuid())
-  name String
+model Users {
+  id    String  @id @default(cuid())
+  name  String
   email String?
-  age String?
+  age   String?
 }
